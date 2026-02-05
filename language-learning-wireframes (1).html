@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Learning App - Wireframes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .wireframe-navigation {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-btn {
+            padding: 10px 20px;
+            border: 2px solid #e0e0e0;
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        
+        .nav-btn:hover {
+            border-color: #4A90E2;
+            background: #f0f7ff;
+        }
+        
+        .nav-btn.active {
+            background: #4A90E2;
+            color: white;
+            border-color: #4A90E2;
+        }
+        
+        .wireframe-container {
+            background: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            min-height: 600px;
+        }
+        
+        .screen {
+            display: none;
+            max-width: 400px;
+            margin: 0 auto;
+            border: 3px solid #333;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .screen.active {
+            display: block;
+        }
+        
+        .phone-header {
+            background: #4A90E2;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .phone-content {
+            background: white;
+            min-height: 600px;
+            padding: 20px;
+        }
+        
+        .wireframe-element {
+            border: 2px dashed #ccc;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+            background: #fafafa;
+        }
+        
+        .element-label {
+            font-size: 11px;
+            color: #999;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .placeholder-text {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .button {
+            background: #4A90E2;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        .button-secondary {
+            background: white;
+            color: #4A90E2;
+            border: 2px solid #4A90E2;
+        }
+        
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+        
+        .card {
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            background: white;
+        }
+        
+        .card-title {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        .card-description {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .progress-bar {
+            background: #e0e0e0;
+            height: 8px;
+            border-radius: 4px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            background: #4CAF50;
+            height: 100%;
+            transition: width 0.3s;
+        }
+        
+        .chat-bubble {
+            background: #f0f0f0;
+            padding: 12px 16px;
+            border-radius: 16px;
+            margin: 8px 0;
+            max-width: 85%;
+            font-size: 14px;
+        }
+        
+        .chat-bubble.user {
+            background: #4A90E2;
+            color: white;
+            margin-left: auto;
+        }
+        
+        .icon-placeholder {
+            width: 60px;
+            height: 60px;
+            background: #e0e0e0;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+        }
+        
+        .tag {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            margin: 4px;
+        }
+        
+        .audio-player {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .play-button {
+            width: 50px;
+            height: 50px;
+            background: #4A90E2;
+            border-radius: 50%;
+            margin: 10px auto;
+            position: relative;
+        }
+        
+        .play-button::before {
+            content: '▶';
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 55%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        
+        .scenario-card {
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .scenario-card:hover {
+            border-color: #4A90E2;
+            background: #f0f7ff;
+        }
+        
+        .emoji {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+        
+        .back-btn {
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        
+        .notes {
+            background: #fff9e6;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .notes-title {
+            font-weight: 600;
+            color: #f57c00;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Language Learning App - Wireframes</h1>
+            <p class="subtitle">Interactive prototype showing key user flows and features</p>
+        </div>
+        
+        <div class="wireframe-navigation">
+            <button class="nav-btn active" onclick="showScreen('onboarding')">1. Onboarding</button>
+            <button class="nav-btn" onclick="showScreen('goals')">2. Set Mission</button>
+            <button class="nav-btn" onclick="showScreen('assessment')">3. Diagnostic</button>
+            <button class="nav-btn" onclick="showScreen('pathing')">4. AI Pathing</button>
+            <button class="nav-btn" onclick="showScreen('reading-prime')">5. Reading Prime</button>
+            <button class="nav-btn" onclick="showScreen('listening-prime')">6. Listening Prime</button>
+            <button class="nav-btn" onclick="showScreen('refinement')">7. Refinement</button>
+            <button class="nav-btn" onclick="showScreen('building-blocks')">8. Building Blocks</button>
+            <button class="nav-btn" onclick="showScreen('roleplay')">9. Voice Role-play</button>
+            <button class="nav-btn" onclick="showScreen('sidestep')">10. Side-step Drill</button>
+            <button class="nav-btn" onclick="showScreen('writing-output')">11. Writing Output</button>
+            <button class="nav-btn" onclick="showScreen('feedback')">12. AI Feedback</button>
+            <button class="nav-btn" onclick="showScreen('reflection')">13. Reflection</button>
+            <button class="nav-btn" onclick="showScreen('progress')">14. Progress</button>
+        </div>
+        
+        <div class="wireframe-container">
+            <!-- Screen 1: Onboarding -->
+            <div class="screen active" id="onboarding">
+                <div class="phone-header">
+                    <div>Language App</div>
+                    <div>⚙️</div>
+                </div>
+                <div class="phone-content">
+                    <div class="icon-placeholder"></div>
+                    <h2 style="text-align: center; margin: 20px 0;">Welcome!</h2>
+                    <p style="text-align: center; color: #666; margin-bottom: 30px;">
+                        Learn languages through real-world scenarios powered by AI
+                    </p>
+                    
+                    <div class="wireframe-element">
+                        <div class="element-label">Language Selection Dropdown</div>
+                        <select class="input-field">
+                            <option>Select your target language</option>
+                            <option>Chinese (Mandarin)</option>
+                            <option>Japanese</option>
+                            <option>Korean</option>
+                            <option>Spanish</option>
+                            <option>French</option>
+                        </select>
+                    </div>
+                    
+                    <button class="button">Get Started</button>
+                    
+                    <p style="text-align: center; color: #999; font-size: 12px; margin-top: 20px;">
+                        Already have an account? <span style="color: #4A90E2; cursor: pointer;">Sign in</span>
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Screen 2: Goals / Mission -->
+            <div class="screen" id="goals">
+                <div class="phone-header">
+                    <div class="back-btn" onclick="showScreen('onboarding')">←</div>
+                    <div>Define Your Mission</div>
+                    <div></div>
+                </div>
+                <div class="phone-content">
+                    <h3 style="margin-bottom: 10px;">What's your mission?</h3>
+                    <p style="color: #666; font-size: 13px; margin-bottom: 20px;">
+                        Tell us what you want to achieve with this language
+                    </p>
+                    
+                    <div class="wireframe-element">
+                        <div class="element-label">Mission Input</div>
+                        <textarea class="input-field" rows="4" placeholder="e.g., Shopping for souvenirs in rural Japan">Shopping for souvenirs in rural Japan</textarea>
+                    </div>
+                    
+                    <div class="card" style="background: #f0f7ff; border-color: #4A90E2; margin-top: 15px;">
+                        <div style="font-size: 12px; color: #1976d2; font-weight: 600; margin-bottom: 5px;">💡 AI Suggestion</div>
+                        <div style="font-size: 12px; color: #666;">
+                            Based on your mission, we recommend focusing on: conversational speaking, cultural etiquette, and practical shopping scenarios
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin: 20px 0 10px;">How much time can you dedicate?</h3>
+                    
+                    <div class="grid-2">
+                        <div class="scenario-card">
+                            <div>⏰</div>
+                            <div style="font-size: 13px; font-weight: 600;">5 hrs/week</div>
+                        </div>
+                        <div class="scenario-card" style="background: #e3f2fd; border-color: #4A90E2;">
+                            <div>⏰⏰</div>
+                            <div style="font-size: 13px; font-weight: 600;">10 hrs/week</div>
+                        </div>
+                    </div>
+                    
+                    <div class="wireframe-element" style="margin-top: 20px;">
+                        <div class="element-label">Duration Slider</div>
+                        <p style="font-size: 13px; margin-bottom: 8px;">Course duration: <strong>9 weeks</strong></p>
+                        <input type="range" style="width: 100%;" min="4" max="16" value="9">
+                    </div>
+                    
+                    <button class="button">Continue to Diagnostic</button>
+                </div>
+            </div>
+            
+            <!-- Screen 3: Assessment -->
+            <div class="screen" id="assessment">
+                <div class="phone-header">
+                    <div class="back-btn" onclick="showScreen('goals')">←</div>
+                    <div>Quick Assessment</div>
+                    <div></div>
+                </div>
+                <div class="phone-content">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 40%;"></div>
+                    </div>
+                    <p style="font-size: 12px; color: #999; margin-bottom: 20px;">Question 4 of 10</p>
+                    
+                    <h3 style="margin-bottom: 15px;">How would you greet someone in Japanese?</h3>
+                    
+                    <div class="audio-player">
+                        <div class="element-label">Audio Question</div>
+                        <div class="play-button"></div>
+                        <p style="font-size: 12px; color: #666;">Listen to the conversation</p>
+                    </div>
+                    
+                    <div class="wireframe-element">
+                        <div class="element-label">Multiple Choice Options</div>
+                        <div class="card" style="cursor: pointer;">
+                            <div class="card-description">A) こんにちは (Konnichiwa)</div>
+                        </div>
+                        <div class="card" style="cursor: pointer; background: #e3f2fd;">
+                            <div class="card-description">B) さようなら (Sayonara)</div>
+                        </div>
+                        <div class="card" style="cursor: pointer;">
+                            <div class="card-description">C) ありがとう (Arigatou)</div>
+                        </div>
+                    </div>
+                    
+                    <button class="button">Next Question</button>
+                </div>
+            </div>
+            
+            <!-- Screen 4: AI Pathing -->
+            <div class="screen" id="pathing">
+                <div class="phone-header">
+                    <div class="back-btn" onclick="showScreen('assessment')">←</div>
+                    <div>Your Learning Path</div>
+                    <div></div>
+                </div>
+                <div class="phone-content">
+                    <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none;">
+                        <div style="font-size: 13px; margin-bottom: 5px;">Diagnostic Complete</div>
+                        <div style="font-size: 28px; font-weight: 700; margin-bottom: 5px;">CEFR A1</div>
+                        <div style="font-size: 12px;">Beginner Level</div>
+                    </div>
+                    
+                    <h3 style="margin: 20px 0 10px;">AI-Generated Path for Your Mission</h3>
+                    <p style="color: #666; font-size: 13px; margin-bottom: 15px;">
+                        Based on "Shopping for souvenirs in rural Japan"
+                    </p>
+                    
+                    <div class="card" style="border-color: #4A90E2; border-width: 3px; background: #f0f7ff;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <div style="font-size: 11px; color: #1976d2; font-weight: 600; margin-bottom: 5px;">STARTING TOPIC</div>
+                                <div class="card-title">1. Shopping</div>
+                                <div class="card-description" style="margin-top: 8px;">
+                                    Master essential shopping conversations and cultural etiquette
+                                </div>
+                                <div style="margin-top: 10px; font-size: 12px; color: #666;">
+                                    📍 5 scenarios • ⏱️ ~2 weeks
+                                </div>
+                            </div>
+                            <div style="font-size: 28px;">🛍️</div>
+                        </div>
+                    </div>
+                    
+                    <div class="card" style="opacity: 0.7;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <div style="font-size: 11px; color: #999; font-weight: 600; margin-bottom: 5px;">NEXT TOPIC</div>
+                                <div class="card-title">2. Directions</div>
+                                <div class="card-description" style="margin-top: 8px;">
+                                    Navigate to shops and markets with confidence
+                                </div>
+                            </div>
+                            <div style="font-size: 28px;">🗺️</div>
+                        </div>
+                    </div>
+                    
+                    <div class="card" style="opacity: 0.5;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <div style="font-size: 11px; color: #999; font-weight: 600; margin-bottom: 5px;">THEN</div>
+                                <div class="card-title">3. Numbers & Money</div>
+                            </div>
+                            <div style="font-size: 28px;">💴</div>
+                        </div>
+                    </div>
+                    
+                    <div class="notes">
+                        <div class="notes-title">🤖 AI Insights</div>
+                        <div style="font-size: 13px; color: #666;">
+                            This path prioritizes practical communication skills you'll need most in rural Japan. Formal/polite language is emphasized for cultural appropriateness.
+                        </div>
+                    </div>
+                    
+                    <button class="button">Start Shopping Topic</button>
+                </div>
+            </div>
+            
+            <!-- Screen 5: Reading Prime -->
+            <div class="screen" id="reading-prime">
+                <div class="phone-header">
+                    <div class="back-btn" onclick="showScreen('pathing')">←</div>
+                    <div>Reading: Priming</div>
+                    <div>📖</div>
+                </div>
+                <div class="phone-content">
+                    <div style="background: #e3f2fd; padding: 12px; border-radius: 6px; margin-bottom: 15px;">
+                        <div style="font-size: 12px; color: #1976d2; font-weight: 600;">Phase 2: Priming (Reading)</div>
+                        <div style="font-size: 11px; color: #666; margin-top: 4px;">Build context before interaction</div>
+                    </div>
+                    
+                    <h3 style="margin-bottom: 10px;">Real-world Material</h3>
+                    <p style="color: #666; font-size: 13px; margin-bottom: 15px;">
+                        Study this souvenir shop brochure
+                    </p>
+                    
+                    <div class="wireframe-element">
+                        <div class="element-label">Authentic Reading Material (Brochure)</div>
+                        <div style="background: white; border: 2px solid #e0e0e0; padding: 20px; border-radius: 8px;">
+                            <div style="text-align: center; margin-bottom: 15px;">
+                                <div style="font-size: 20px; font-weight: 700; color: #c62828;">田中お土産店</div>
+                                <div style="font-size: 11px; color: #666;">Tanaka Souvenir Shop</div>
+                            </div>
+                            
+                            <div style="font-size: 12px; margin: 10px 0; padding: 10px; background: #fafafa; border-radius: 4px;">
+                                <div style="font-weight: 600;">扇子（せんす）</div>
+                                <div style="color: #666;">Folding Fan</div>
+                                <div style="color: #c62828; font-weight: 700; margin-top: 5px;">¥2,000</div>
+                            </div>
+                            
+                            <div style="font-size: 12px; margin: 10px 0; padding: 10px; background: #fafafa; border-radius: 4px;">
+                                <div style="font-weight: 600;">キーホルダー</div>
+                                <div style="color: #666;">Keychain</div>
+                                <div style="color: #c62828; font-weight: 700; margin-top: 5px;">¥800</div>
+                            </div>
+                            
+                            <div style="font-size: 12px; margin: 10px 0; padding: 10px; background: #fafafa; border-radius: 4px;">
+                                <div style="font-weight: 600;">下駄（げた）</div>
+                                <div style="color: #666;">Traditional Sandals</div>
+                                <div style="color: #c62828; font-weight: 700; margin-top: 5px;">¥4,500</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin: 20px 0 10px;">Task</h3>
+                    <div class="card" style="background: #fff3e0; border-color: #ff9800;">
+                        <div style="font-size: 13px; font-weight: 600; color: #e65100; margin-bottom: 8px;">
+                            🎯 What is the price of a folding fan?
+                        </div>
+                        <input class="input-field" placeholder="Type your answer...">
+                    </div>
+                    
+                    <button class="button">Check Answer</button>
+                </div>
+            </div>
+            
+            <!-- Screen 6: Listening Prime -->
+            <div class="screen" id="listening-prime">
+                <div class="phone-header">
+                    <div class="back-btn" onclick="showScreen('reading-prime')">←</div>
+                    <div>Listening: Priming</div>
+                    <div>🎧</div>
+                </div>
+                <div class="phone-content">
+                    <div style="background: #e3f2fd; padding: 12px; border-radius: 6px; margin-bottom: 15px;">
+                        <div style="font-size: 12px; color: #1976d2; font-weight: 600;">Phase 2: Priming (Listening)</div>
+                        <div style="font-size: 11px; color: #666; margin-top: 4px;">Recognize real-world audio patterns</div>
+                    </div>
+                    
+                    <h3 style="margin-bottom: 10px;">Real-world Audio</h3>
+                    <p style="color: #666; font-size: 13px; margin-bottom: 15px;">
+                        Listen to this greeting at a souvenir shop
+                    </p>
+                    
+                    <div class="audio-player" style="margin: 20px 0;">
+                        <div style="font-size: 13px; font-weight: 600; color: #666; margin-bottom: 15px;">
+                            🎭 Shopkeeper greeting a customer
+                        </div>
+                        <div class="play-button"></div>
+                        <div style="margin-top: 15px; font-size: 11px; color: #999;">
+                            Tap to play audio clip (0:08)
+                        </div>
+                    </div>
+                    
+                    <div class="wireframe-element">
+                        <div class="element-label">Transcription (Hidden until after attempt)</div>
+                        <div style="background: #f5f5f5; padding: 15px; border-radius: 6px; font-size: 13px; color: #999; text-align: center;">
+                            🔒 Complete the task to see transcription
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin: 20px 0 10px;">Task</h3>
+                    <div class="card" style="background: #fff3e0; border-color: #ff9800;">
+                        <div style="font-size: 13px; font-weight: 600; color: #e65100; margin-bottom: 12px;">
+                            🎯 Which greeting did the shopkeeper use?
+                        </div>
+                        
+                        <div class="card" style="cursor: pointer; margin: 8px 0; padding: 12px;">
+                            <div style="font-size: 13px;">A) こんにちは (Hello)</div>
+                        </div>
+                        <div class="card" style="cursor: pointer; margin: 8px 0; padding: 12px; background: #e3f2fd; border-color: #4A90E2;">
+                            <div style="font-size: 13px;">B) いらっしゃいませ (Welcome)</div>
+                        </div>
+                        <div class="card" style="cursor: pointer; margin: 8px 0; padding: 12px;">
+                            <div style="font-size: 13px;">C) おはよう (Good morning)</div>
+                        </div>
+                    </div>
+                    
+                    <button class="button">Submit Answer</button>
+                </div>
+            </div>
+            
+            <!-- Screen 7: Refinement -->
+            <div class="screen" id="refinement">
+                <div class="phone-header">
+                    <div class="back-btn" onclick="showScreen('listening-prime')">←</div>
+                    <div>Personalization</div>
+                    <div></div>
+                </div>
+                <div class="phone-content">
+                    <div style="background: #e8f5e9; padding: 12px; border-radius: 6px; margin-bottom: 15px;">
+                        <div style="font-size: 12px; color: #2e7d32; font-weight: 600;">✓ Great work on the priming tasks!</div>
+                        <div style="font-size: 11px; color: #666; margin-top: 4px;">You identified the greeting and pricing correctly</div>
+                    </div>
+                    
+                    <h3 style="margin-bottom: 10px;">Let's refine your learning</h3>
+                    <p style="color: #666; font-size: 13px; margin-bottom: 15px;">
+                        How does this shopping scenario apply to you specifically?
+                    </p>
+                    
+                    <div class="wireframe-element">
+                        <div class="element-label">User Context Input</div>
+                        <textarea class="input-field" rows="4" placeholder="e.g., I'm worried about talking to elderly people in rural areas">I'm worried about talking to elderly people in rural areas</textarea>
+                    </div>
+                    
+                    <div class="card" style="background: #f0f7ff; border-color: #4A90E2; margin-top: 15px;">
+                        <div style="font-size: 12px; color: #1976d2; font-weight: 600; margin-bottom: 8px;">🤖 AI Adjustment</div>
+                        <div style="font-size: 12px; color: #666; line-height: 1.5;">
+                            Based on your concern, I'll:
+                            <br>• Emphasize <strong>formal/polite language</strong> (です/ます forms)
+                            <br>• Include <strong>honorific expressions</strong> used with elders
+                            <br>• Practice scenarios with <strong>elderly shopkeepers</strong>
+                            <br>• Add cultural tips on <strong>showing respect</strong>
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin: 20px 0 10px;">Any other concerns?</h3>
+                    <div class="grid-2">
+                        <div class="scenario-card">
+                            <div style="font-size: 20px; margin-bottom: 5px;">💴</div>
+                            <div style="font-size: 11px;">Numbers confuse me</div>
+                        </div>
+                        <div class="scenario-card">
+                            <div style="font-size: 20px; margin-bottom: 5px;">🗣️</div>
+                            <div style="font-size: 11px;">I'm shy speaking</div>
+                        </div>
+                    </div>
+                    
+                    <button class="button">Continue to Learning</button>
+                </div>
+            </div>
+            
+            <!-- Screen 8: Building Blocks -->
+            <div class="screen" id="building-blocks">
+                <div class="phone-header">
+                    <div class="back-btn" onclick="showScreen('refinement')">←</div>
+                    <div>Building Blocks</div>
+                    <div>🧱</div>
+                </div>
+                <div class="phone-content">
+                    <div style="background: #fff3e0; padding: 12px; border-radius: 6px; margin-bottom: 15px;">
+                        <div style="font-size: 12px; color: #e65100; font-weight: 600;">Phase 3: Interaction Prep</div>
+                        <div style="font-size: 11px; color: #666; margin-top: 4px;">Mini-lessons for the role-play ahead</div>
+                    </div>
+                    
+                    <h3 style="margin-bottom: 10px;">Essential Skills</h3>
+                    <p style="color: #666; font-size: 13px; margin-bottom: 15px;">
+                        Quick lessons on what you'll need
+                    </p>
+                    
+                    <div class="card" style="background: #e8f5e9; border-color: #4CAF50;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <div style="font-size: 11px; color: #2e7d32; font-weight: 600; margin-bottom: 5px;">✓ COMPLETED</div>
+                                <div class="card-title">Numbers (1-10,000)</div>
+                                <div class="card-description" style="margin-top: 8px;">
+                                    Essential for understanding prices
+                                </div>
+                                <div style="margin-top: 10px; font-size: 11px; color: #666;">
+                                    ⏱️ 3 min lesson
+                                </div>
+                            </div>
+                            <div style="font-size: 28px;">💯</div>
+                        </div>
+                    </div>
+                    
+                    <div class="card" style="border-color: #4A90E2; border-width: 3px; background: #f0f7ff;">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <div style="font-size: 11px; color: #1976d2; font-weight: 600; margin-bottom: 5px;">CURRENT</div>
+                                <div class="card-title">Polite Modals</div>
+                                <div class="card-description" style="margin-top: 8px;">
+                                    Request politely, show respect to elders
+                                </div>
+                                <div style="margin-top: 10px;">
+                                    <div class="tag">これをください</div>
+                                    <div class="tag">〜てもいいですか</div>
+                                </div>
+                            </div>
+                            <div style="font-size: 28px;">🙏</div>
+                        </div>
+                        <button class="button" style="margin-top: 15px;">Start Lesson</button>
+                    </div>
+                    
+                    <div class="notes">
+                        <div class="notes-title">⚡ Quick Lesson Format</div>
+                        <div style="font-size: 13px; color: #666;">
+                            Each building block is 2-5 minutes with examples, practice, and immediate application to your scenario.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Screen 9: Voice Role-play -->
+            <div class="screen" id="roleplay">
+                <div class="phone-header">
+                    <div class="back-btn" onclick="showScreen('building-blocks')">←</div>
+                    <div>Live Simulation</div>
+                    <div>🎙️</div>
+                </div>
+                <div class="phone-content">
+                    <div style="background: #fff3e0; padding: 12px; border-radius: 6px; margin-bottom: 15px;">
+                        <div style="font-size: 12px; color: #e65100; font-weight: 600;">Phase 3: Real-time Interaction</div>
+                        <div style="font-size: 11px; color: #666; margin-top: 4px;">Voice role-play with AI adaptation</div>
+                    </div>
+                    
+                    <div class="card" style="background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%); color: white; border: none;">
+                        <div style="font-size: 13px; font-weight: 600; margin-bottom: 8px;">
+                            🎭 Your Role
+                        </div>
+                        <div style="font-size: 12px; line-height: 1.5;">
+                            You're shopping at Tanaka's souvenir shop in rural Japan. The shopkeeper is an elderly woman. Try to politely buy a folding fan!
+                        </div>
+                    </div>
+                    
+                    <div class="wireframe-element" style="min-height: 260px;">
+                        <div class="element-label">AI Voice Conversation</div>
+                        
+                        <div class="chat-bubble">
+                            <strong>AI Shopkeeper (Elderly):</strong><br>
+                            いらっしゃいませ！どうぞご覧ください。<br>
+                            <em style="font-size: 11px; color: #888;">(Welcome! Please take a look.)</em>
+                            <div style="margin-top: 8px; font-size: 10px; color: #999;">🔊 Voice played</div>
+                        </div>
+                        
+                        <div class="chat-bubble user">
+                            <strong>You:</strong><br>
+                            すみません、この扇子はいくらですか？<br>
+                            <em style="font-size: 11px;">(Excuse me, how much is this fan?)</em>
+                            <div style="margin-top: 8px; font-size: 10px;">🎤 Voice recorded</div>
+                        </div>
+                        
+                        <div class="chat-bubble">
+                            <strong>AI Shopkeeper:</strong><br>
+                            あ、それですか？2000円でございます。<br>
+                            <em style="font-size: 11px; color: #888;">(Oh, that one? It's 2000 yen.)</em>
+                            <div style="margin-top: 8px; font-size: 10px; color: #999;">🔊 Voice played</div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #f5f5f5; padding: 15px; border-radius: 8px; text-align: center; margin: 15px 0;">
+                        <div style="font-size: 12px; color: #666; margin-bottom: 12px;">Tap and hold to speak</div>
+                        <button style="background: #4A90E2; color: white; border: none; padding: 20px; border-radius: 50%; font-size: 24px; cursor: pointer; width: 70px; height: 70px;">
+                            🎤
+                        </button>
+                        <div style="font-size: 10px; color: #999; margin-top: 8px;">Real-time voice recognition</div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 8px;">
+                        <button class="button button-secondary" style="font-size: 12px; padding: 10px; flex: 1;">
+                            💡 Hint
+                        </button>
+                        <button class="button button-secondary" style="font-size: 12px; padding: 10px; flex: 1;">
+                            ⏸️ Pause
+                        </button>
+                    </div>
+                    
+                    <div class="notes" style="margin-top: 15px;">
+                        <div class="notes-title">🤖 AI is listening</div>
+                        <div style="font-size: 12px; color: #666;">
+                            The AI adapts in real-time. If you struggle with a specific skill (like numbers), it will offer targeted help.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Screen 10: Side-step Drill -->
+            <div class="screen" id="sidestep">
+                <div class="phone-header">
+                    <div class="back-btn" onclick="showScreen('roleplay')">←</div>
+                    <div>Quick Drill</div>
+                    <div>⚡</div>
+                </div>
+                <div class="phone-content">
+                    <div style="background: #fff3e0; padding: 12px; border-radius: 6px; margin-bottom: 15px;">
+                        <div style="font-size: 12px; color: #e65100; font-weight: 600;">⚡ Side-step Activated</div>
+                        <div style="font-size: 11px; color: #666; margin-top: 4px;">Quick practice, then back to role-play</div>
+                    </div>
+                    
+                    <div class="card" style="background: #f0f7ff; border-color: #4A90E2;">
+                        <div style="font-size: 12px; color: #1976d2; font-weight: 600; margin-bottom: 8px;">🤖 AI Detected</div>
+                        <div style="font-size: 12px; color: #666;">
+                            You're hesitating with numbers. Let's do a quick 2-minute drill, then return to the shop!
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin: 20px 0 10px;">Number Drill</h3>
+                    <p style="color: #666; font-size: 13px; margin-bottom: 15px;">
+                        Listen and identify the price
+                    </p>
+                    
+                    <div class="audio-player" style="margin: 15px 0;">
+                        <div class="play-button"></div>
+                        <div style="font-size: 11px; color: #666; margin-top: 10px;">🔊 "二千円です"</div>
+                    </div>
+                    
+                    <div class="wireframe-element">
+                        <div class="element-label">Quick Answer Options</div>
+                        <div class="grid-2">
+                            <div class="scenario-card" style="padding: 20px;">
+                                <div style="font-size: 18px; font-weight: 700;">¥1,000</div>
+                            </div>
+                            <div class="scenario-card" style="padding: 20px; background: #e3f2fd; border-color: #4A90E2;">
+                                <div style="font-size: 18px; font-weight: 700;">¥2,000</div>
+                            </div>
+                            <div class="scenario-card" style="padding: 20px;">
+                                <div style="font-size: 18px; font-weight: 700;">¥3,000</div>
+                            </div>
+                            <div class="scenario-card" style="padding: 20px;">
+                                <div style="font-size: 18px; font-weight: 700;">¥5,000</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-bar" style="margin: 20px 0;">
+                        <div class="progress-fill" style="width: 40%;"></div>
+                    </div>
+                    <p style="font-size: 12px; color: #666; text-align: center;">Question 2 of 5</p>
+                    
+                    <button class="button">Next Question</button>
+                    
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button class="button button-secondary" style="font-size: 12px; padding: 8px 16px; width: auto; display: inline-block;">
+                            Skip & Return to Role-play
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Screen 11: Writing Output -->
+            <div class="screen" id="writing-output">
+                <div class="phone-header">
+                    <div class="back-btn" onclick="showScreen('sidestep')">←</div>
+                    <div>Writing Reflection</div>
+                    <div>✍️</div>
+                </div>
+                <div class="phone-content">
+                    <div style="background: #e8f5e9; padding: 12px; border-radius: 6px; margin-bottom: 15px;">
+                        <div style="font-size: 12px; color: #2e7d32; font-weight: 600;">Phase 4: Output & Reflection</div>
+                        <div style="font-size: 11px; color: #666; margin-top: 4px;">Apply what you learned through writing</div>
+                    </div>
+                    
+                    <div style="background: #f0f7ff; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                        <div style="font-size: 13px; font-weight: 600; color: #1976d2; margin-bottom: 8px;">
+                            ✓ Role-play Complete!
+                        </div>
+                        <div style="font-size: 12px; color: #666;">
+                            You successfully bought a fan and negotiated the price from ¥2,000 to ¥1,800!
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin-bottom: 10px;">Writing Task</h3>
+                    <p style="color: #666; font-size: 13px; margin-bottom: 15px;">
+                        Write a message to your friend/spouse describing what you bought and what the shopkeeper said
+                    </p>
+                    
+                    <div class="wireframe-element">
+                        <div class="element-label">Text Message Composition</div>
+                        <div style="background: white; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; min-height: 180px;">
+                            <div style="font-size: 11px; color: #999; margin-bottom: 10px;">To: Spouse</div>
+                            <textarea class="input-field" rows="8" placeholder="Write in Japanese..." style="border: none; padding: 0; font-size: 13px;">今日、田中お土産店で扇子を買った！最初は2000円だったけど、俺が値引きをお願いしたら、1800円になった。店員さんはとても優しかった。</textarea>
+                        </div>
+                    </div>
+                    
+                    <div style="margin: 15px 0; font-size: 11px; color: #999; text-align: right;">
+                        Character count: 68
+                    </div>
+                    
+                    <button class="button">Submit for Review</button>
+                    
+                    <div class="notes" style="margin-top: 15px;">
+                        <div class="notes-title">💡 Writing Tip</div>
+                        <div style="font-size: 12px; color: #666;">
+                            Think about: What did you buy? How much? What did the shopkeeper say or do? How did you feel?
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Screen 12: AI Feedback -->
+            <div class="screen" id="feedback">
+                <div class="phone-header">
+                    <div class="back-btn" onclick="showScreen('writing-output')">←</div>
+                    <div>AI Assessment</div>
+                    <div></div>
+                </div>
+                <div class="phone-content">
+                    <div style="text-align: center; margin: 20px 0;">
+                        <div style="font-size: 64px;">✨</div>
+                        <h2 style="margin: 15px 0 5px;">Writing Reviewed!</h2>
+                        <p style="color: #666; font-size: 14px;">Your message has been analyzed</p>
+                    </div>
+                    
+                    <div class="card" style="background: #e8f5e9; border-color: #4CAF50;">
+                        <div class="card-title" style="color: #2e7d32;">✓ Grammar Accuracy: 90%</div>
+                        <div class="card-description" style="margin-top: 10px;">
+                            Great use of past tense and connecting phrases!
+                        </div>
+                    </div>
+                    
+                    <div class="card" style="background: #fff3e0; border-color: #ff9800;">
+                        <div class="card-title" style="color: #e65100;">💡 Improvement Suggestion</div>
+                        <div class="card-description" style="margin-top: 10px; line-height: 1.6;">
+                            <strong>Politeness Level:</strong><br>
+                            You used "俺" (ore) which is very casual masculine "I". <br><br>
+                            In this context, writing to your spouse about a respectful interaction with an elderly shopkeeper, <strong>"私" (watashi)</strong> would be more appropriate to maintain the polite tone.
+                        </div>
+                    </div>
+                    
+                    <div class="wireframe-element">
+                        <div class="element-label">Corrected Version</div>
+                        <div style="background: #f5f5f5; padding: 15px; border-radius: 6px; font-size: 13px; line-height: 1.6;">
+                            今日、田中お土産店で扇子を買った！最初は2000円だったけど、<span style="background: #ffd54f; padding: 2px 4px; border-radius: 3px;">私</span>が値引きをお願いしたら、1800円になった。店員さんはとても優しかった。
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-title">Additional Notes</div>
+                        <div class="card-description" style="margin-top: 10px;">
+                            • Great use of "〜たら" conditional<br>
+                            • Natural description of the interaction<br>
+                            • Good vocabulary choice for "優しい"
+                        </div>
+                    </div>
+                    
+                    <button class="button">Continue to Reflection</button>
+                </div>
+            </div>
+            
+            <!-- Screen 13: Reflection -->
+            <div class="screen" id="reflection">
+                <div class="phone-header">
+                    <div class="back-btn" onclick="showScreen('feedback')">←</div>
+                    <div>Self-Reflection</div>
+                    <div></div>
+                </div>
+                <div class="phone-content">
+                    <h3 style="margin-bottom: 10px;">How are you feeling?</h3>
+                    <p style="color: #666; font-size: 13px; margin-bottom: 20px;">
+                        Rate your confidence in using these skills in real life
+                    </p>
+                    
+                    <div class="card">
+                        <div class="card-title">Asking for prices politely</div>
+                        <div style="margin-top: 15px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                <span style="font-size: 12px; color: #666;">Not confident</span>
+                                <span style="font-size: 12px; color: #666;">Very confident</span>
+                            </div>
+                            <div style="display: flex; gap: 8px;">
+                                <div style="width: 40px; height: 40px; border: 2px solid #e0e0e0; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px;">😟</div>
+                                <div style="width: 40px; height: 40px; border: 2px solid #e0e0e0; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px;">😐</div>
+                                <div style="width: 40px; height: 40px; border: 2px solid #4A90E2; background: #e3f2fd; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px;">🙂</div>
+                                <div style="width: 40px; height: 40px; border: 2px solid #e0e0e0; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px;">😊</div>
+                                <div style="width: 40px; height: 40px; border: 2px solid #e0e0e0; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px;">🤩</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-title">Using numbers in conversation</div>
+                        <div style="margin-top: 15px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                <span style="font-size: 12px; color: #666;">Not confident</span>
+                                <span style="font-size: 12px; color: #666;">Very confident</span>
+                            </div>
+                            <div style="display: flex; gap: 8px;">
+                                <div style="width: 40px; height: 40px; border: 2px solid #e0e0e0; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px;">😟</div>
+                                <div style="width: 40px; height: 40px; border: 2px solid #4A90E2; background: #e3f2fd; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px;">😐</div>
+                                <div style="width: 40px; height: 40px; border: 2px solid #e0e0e0; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px;">🙂</div>
+                                <div style="width: 40px; height: 40px; border: 2px solid #e0e0e0; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px;">😊</div>
+                                <div style="width: 40px; height: 40px; border: 2px solid #e0e0e0; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px;">🤩</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin: 25px 0 10px;">What did you learn?</h3>
+                    <div class="wireframe-element">
+                        <div class="element-label">Free Text Reflection</div>
+                        <textarea class="input-field" rows="4" placeholder="Write about your experience..."></textarea>
+                    </div>
+                    
+                    <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; margin-top: 20px;">
+                        <div style="font-size: 13px; margin-bottom: 8px;">🎉 Scenario Complete!</div>
+                        <div style="font-size: 20px; font-weight: 700; margin-bottom: 5px;">Next: Asking for Alternative Items</div>
+                        <div style="font-size: 12px;">Unlocked based on your progress</div>
+                    </div>
+                    
+                    <button class="button" style="margin-top: 15px;">View Next Scenario</button>
+                    <button class="button button-secondary">Return to Dashboard</button>
+                </div>
+            </div>
+            
+            <!-- Screen 14: Progress Tracking -->
+            <div class="screen" id="progress">
+                <div class="phone-header">
+                    <div class="back-btn" onclick="showScreen('home')">←</div>
+                    <div>Your Progress</div>
+                    <div>📊</div>
+                </div>
+                <div class="phone-content">
+                    <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none;">
+                        <div style="font-size: 14px; margin-bottom: 5px;">Overall Progress</div>
+                        <div style="font-size: 32px; font-weight: 700; margin-bottom: 5px;">45%</div>
+                        <div style="font-size: 13px;">Week 4 of 9 • On track to finish by April 2026</div>
+                    </div>
+                    
+                    <h3 style="margin: 20px 0 10px;">Learning Stats</h3>
+                    
+                    <div class="grid-2">
+                        <div class="card" style="text-align: center;">
+                            <div style="font-size: 24px; font-weight: 700; color: #4A90E2;">12</div>
+                            <div style="font-size: 12px; color: #666; margin-top: 5px;">Scenarios Completed</div>
+                        </div>
+                        <div class="card" style="text-align: center;">
+                            <div style="font-size: 24px; font-weight: 700; color: #4CAF50;">8.5</div>
+                            <div style="font-size: 12px; color: #666; margin-top: 5px;">Hours This Week</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid-2">
+                        <div class="card" style="text-align: center;">
+                            <div style="font-size: 24px; font-weight: 700; color: #ff9800;">156</div>
+                            <div style="font-size: 12px; color: #666; margin-top: 5px;">Words Learned</div>
+                        </div>
+                        <div class="card" style="text-align: center;">
+                            <div style="font-size: 24px; font-weight: 700; color: #9c27b0;">5</div>
+                            <div style="font-size: 12px; color: #666; margin-top: 5px;">Day Streak 🔥</div>
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin: 20px 0 10px;">Skills Breakdown</h3>
+                    
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span style="font-size: 13px;">🎧 Listening</span>
+                            <span style="font-size: 13px; font-weight: 600;">70%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span style="font-size: 13px;">🗣️ Speaking</span>
+                            <span style="font-size: 13px; font-weight: 600;">55%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 55%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span style="font-size: 13px;">📖 Reading</span>
+                            <span style="font-size: 13px; font-weight: 600;">40%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 40%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showScreen(screenId) {
+            // Hide all screens
+            document.querySelectorAll('.screen').forEach(screen => {
+                screen.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected screen
+            document.getElementById(screenId).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
